@@ -30,17 +30,7 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-
-  return journeys.uniq([this.transport])
-  // var uniqueModes = [...new Set(this.journeys)]
-  // const uniqueModes = this.journey.from(new Set(journeys))
-  // const distinct = (value, index, journey) => {
-  // return jounrney.indexOf(value) === index
-  // return this.journeys.filter(distinct)
-
+  const unique = [...new Set(this.journeys.map(journey => journey.transport))];
+  return unique
 };
-//new Set([iterable]);
-// var items = [4,5,4,6,3,4,5,2,23,1,4,4,4]
-// var uniqueItems = Array.from(new Set(items))
-
 module.exports = Traveller;
